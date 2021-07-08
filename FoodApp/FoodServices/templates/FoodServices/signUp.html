@@ -1,0 +1,42 @@
+{% block content %}
+<center>
+<h1>Sign Up Form</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <label id="phone-number">Enter your 10 digit mobile number</label>
+    <label id="number-exists"></label>
+    <input type="text" id="mobile-number" name="mobile-number">
+    <br /><br />
+    <label >Name</label>
+    <input type="text" id="name" name="name">
+    <br /><br />
+    <label>Email Id</label>
+    <input type="email" id="email" name="email">
+    <br /><br />
+    <label>Select Role</label>
+    <input type="radio" value="FoodProvider" name="UserType" id="FoodProvider"><label>Food Provider</label>
+    <input type="radio" value="FoodSeeker" name="UserType" id="FoodSeeker"><label>Food Seeker</label>
+    <br /><br />
+    <button class="btn btn-primary">Next</button>
+</form>
+
+{% if user_type != 0 %}
+
+<script>
+    
+        label_id=document.getElementById("number-exists");
+        console.log(label_id);
+        label_id.innerHTML="<div>Number Exists<a>Sign In</a></div>";
+        console.log(label_id);
+    
+</script>
+
+{% else %}
+<script>
+    label_id=document.getElementById("number-exists");
+    label_id.innerHTML="";
+</script>
+{% endif %}
+</center>
+{% endblock %}

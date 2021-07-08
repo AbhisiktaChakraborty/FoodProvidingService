@@ -1,13 +1,30 @@
 from django.db import models
+from django.forms.fields import IntegerField
 
 class Order(models.Model):
-    pass
-
-class FoodProvider(models.Model):
-    pass
+	order_id=models.AutoField(primary_key=True)
+	veg_healthy=models.IntegerField(null=True)
+	veg_ill=models.IntegerField(null=True)
+	nonveg_healthy=models.IntegerField(null=True)
+	nonveg_ill=models.IntegerField(null=True)
+	allergies=models.CharField(max_length=200,null=True)
+	delivery_address=models.CharField(max_length=200)
+	status=models.CharField(max_length=50)  #active, dispatched or delivered
+	food_seeker_id=models.IntegerField()
+	food_provider_id=models.IntegerField(null=True)
 
 class FoodSeeker(models.Model):
-    pass
+	fs_id=models.AutoField(primary_key=True)
+	name=models.CharField(max_length=100)
+	mobile=models.CharField(null=True,max_length=10)
+	email=models.CharField(max_length=100)
+
+class FoodProvider(models.Model):
+    fp_id=models.AutoField(primary_key=True)
+    name=models.CharField(max_length=100)
+    mobile=models.CharField(null=True,max_length=10)
+    email=models.CharField(max_length=100)
+    ratings = models.IntegerField(null=True,default=0)
 
 class Address(models.Model):  
     add_id =  models.BigAutoField(primary_key=True)

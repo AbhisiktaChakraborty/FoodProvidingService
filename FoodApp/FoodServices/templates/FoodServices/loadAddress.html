@@ -15,7 +15,7 @@
     <tbody>  
 {% for address in addressList %}  
     <tr>  
-        <td>{{ address.add_id }}</td> 
+        <td>{{ address.building }}</td> 
         <td>{{ address.building }}</td> 
         <td>{{ address.street }}</td>  
         <td>{{ address.landmark }}</td>
@@ -38,6 +38,6 @@
 </table>  
 <br>  
 <br>  
-  
+<center><a href="/add" class="btn btn-primary">Add New Record</a></center>  
 
-{% end block %}
+{% endblock %}
