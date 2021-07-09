@@ -4,24 +4,28 @@
     <thead class="thead-dark">  
     <tr>  
         
+        <th>Address ID</th>
         <th>Building</th>  
         <th>Street</th>  
         <th>Landmark</th> 
         <th>City</th>  
         <th>State</th> 
         <th>Country</th> 
+        <th>Pin Code</th>
         <th>Actions</th>  
     </tr>  
     </thead>  
     <tbody>  
 {% for address in addressList %}  
     <tr>  
+        <td>{{ address.add_id }}</td>
         <td>{{ address.building }}</td> 
         <td>{{ address.street }}</td>  
         <td>{{ address.landmark }}</td>
         <td>{{ address.city }}</td>  
         <td>{{ address.state }}</td>
-        <td>{{ address.country }}</td>  
+        <td>{{ address.country }}</td> 
+        <td>{{ address.pincode }}</td>
         <td>  
             <form action="" method="POST">
                 {% csrf_token %}
