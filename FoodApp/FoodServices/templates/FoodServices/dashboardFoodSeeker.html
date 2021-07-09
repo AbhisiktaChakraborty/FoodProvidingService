@@ -1,12 +1,14 @@
 {% block content %}
-<h1>Dash Board for Users</h1>
-<h3>Please tell us about your previous order</h3>
-<form action="" method="POST">
-    {% csrf_token %}
-    <label>Quality of Food</label>
-    <input type="number" name="rating">
-    <label>Delivered Within Time</label>
-    <input type="radio" value="Yes" name="Timing"><label>Yes</label>
-    <input type="radio" value="No" name="Timing"><label>No</label>
-</form>
+<h1>Dash Board for FoodSeeker</h1>
+<div id="dashboard_fp">
+    <h2> Existing Orders:-</h2>
+        {% for orders in orderList %}
+        <p><b> Order ID: {{ orders.order_id }} </b>
+            <br> veg healthy: {{orders.veg_healthy}} , veg ill: {{orders.veg_ill}}, nonveg healthy: {{orders.nonveg_healthy}}, nonveg ill: {{orders.nonveg_ill}} 
+            <br> Allergies: {{orders.allergies}}
+            <br> Delivery Address: {{orders.delivery_address}}	<br>
+            <hr>
+        </p>
+        </div>
+        {% endfor %}
 {% endblock %}

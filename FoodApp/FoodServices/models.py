@@ -13,6 +13,7 @@ class Order(models.Model):
 	food_seeker_id=models.IntegerField()
 	food_provider_id=models.IntegerField(null=True)
 
+
 class FoodSeeker(models.Model):
 	fs_id=models.AutoField(primary_key=True)
 	name=models.CharField(max_length=100)
@@ -25,6 +26,18 @@ class FoodProvider(models.Model):
     mobile=models.CharField(null=True,max_length=10)
     email=models.CharField(max_length=100)
     ratings = models.IntegerField(null=True,default=0)
+
+    def setDetails(self,User):
+
+        fp_new=FoodProvider()
+        fp_new.name=User['name']
+        fp_new.mobile=User['mobile-number']
+        fp_new.email=User['email']
+
+        fp_new.save()
+
+        return fp_new
+
 
 class Address(models.Model):  
     add_id =  models.BigAutoField(primary_key=True)

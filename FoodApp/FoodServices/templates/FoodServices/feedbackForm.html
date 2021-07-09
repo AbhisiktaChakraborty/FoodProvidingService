@@ -1,0 +1,14 @@
+{%block content %}
+<h2>Feedback Form for FoodSeeker</h2>
+<h3>Please tell us about your previous order</h3>
+<form action="" method="POST">
+    {% csrf_token %}
+    <label>Quality of Food</label>
+    <input type="number" name="rating">
+    <label>Delivered Within Time</label>
+    <input type="radio" value="Yes" name="Timing"><label>Yes</label>
+    <input type="radio" value="No" name="Timing"><label>No</label>
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
