@@ -19,9 +19,9 @@ class Order(models.Model):
     order_status=models.IntegerField(default=0) #active:0, confirmed:1, dispatched:2 or delivered:3
     food_seeker_id=models.IntegerField(default=0)
     food_provider_id=models.IntegerField(null=True)
-#   confirm_date_time 
-#   dispatch_date_time
-#   deliver_date_time
+    confirm_date_time=models.DateTimeField() 
+#    dispatch_date_time
+#    deliver_date_time
 
 
 class Address(models.Model):  

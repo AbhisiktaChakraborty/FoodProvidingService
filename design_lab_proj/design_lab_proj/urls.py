@@ -26,5 +26,6 @@ urlpatterns = [
    path('raiseorder.html', displayNewOrderForm, name='raiseorder'),
    path('modifyorder.html', displayEditableOrderForm, name='modifyorder'),
    path('dashboard_foodseeker.html', displayFSOrderList, name='dashboard_foodseeker'),
-   path('raisemodifyorder/header.html',header, name='header')
+   path('raisemodifyorder/header.html',header, name='header'),
+   path('dashboardfoodprovider.html',confirmOrder, name='confirmorder') 
 ]
