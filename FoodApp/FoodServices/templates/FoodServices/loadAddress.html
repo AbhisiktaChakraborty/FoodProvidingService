@@ -1,0 +1,47 @@
+{% block content %}
+
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        
+        <th>Address ID</th>
+        <th>Building</th>  
+        <th>Street</th>  
+        <th>Landmark</th> 
+        <th>City</th>  
+        <th>State</th> 
+        <th>Country</th> 
+        <th>Pin Code</th>
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for address in addressList %}  
+    <tr>  
+        <td>{{ address.add_id }}</td>
+        <td>{{ address.building }}</td> 
+        <td>{{ address.street }}</td>  
+        <td>{{ address.landmark }}</td>
+        <td>{{ address.city }}</td>  
+        <td>{{ address.state }}</td>
+        <td>{{ address.country }}</td> 
+        <td>{{ address.pincode }}</td>
+        <td>  
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label id="edit">Edit</label>
+                <input type="radio" id="edit" name="edit" value="{{ address.add_id }}" >
+                <label id="delete">Delete</label>
+                <input type="radio" id="delete" name="delete" value="{{ address.add_id }}" > 
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </td> 
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="addAddress" class="btn btn-primary">Add New Record</a></center>  
+
+{% endblock %}

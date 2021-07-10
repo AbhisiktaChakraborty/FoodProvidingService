@@ -1,0 +1,67 @@
+{% block content %}
+
+
+<form method="POST" class="post-form" >  
+    {% csrf_token %}  
+<div class="container">  
+<br>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<h3>Update Details</h3>  
+</div>  
+</div>  
+
+<input type="hidden" name="add_id" value="{{ add_obj.0 }}">
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Building:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="building" id="id_building" required maxlength="100" value="{{ add_obj.1 }}"/>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Street:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="street" id="id_street" required maxlength="100" value="{{ add_obj.2 }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Landmark:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="landmark" id="id_landmark" required maxlength="100" value="{{ add_obj.3 }}"/>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">City:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="city" id="id_city" required maxlength="100" value="{{ add_obj.4 }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">State:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="state" id="id_state" required maxlength="100" value="{{ add_obj.5 }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Country:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="country" id="id_country" required maxlength="100" value="{{ add_obj.6 }}"/>  
+</div>  
+</div> 
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">Pin Code:</label>  
+<div class="col-sm-4">  
+    <input type="text" name="pincode" id="id_pincode" required maxlength="9" value="{{ add_obj.7 }}"/>  
+</div>  
+</div>   
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<button type="submit" class="btn btn-primary">Update</button>  
+</div>  
+</div>  
+</div>  
+</form>  
+
+{% endblock %}
