@@ -77,7 +77,15 @@ def submitModifyOrderForm(request, order_id, modify_or_cancel):
 
 
 #ConfirmOrderUI
+def confirmOrder(request):
+        orderManager=OrderManager()
+        fp_id=request.session['fp_id']
+        if request.method == 'POST' :
+                confirm_order_id=request.POST.get("confirm_order_id")
+                orderManager = OrderManager()
+                orderManager.confirmOrder(fp_id, confirm_order_id)
 
+        return redirect('confirmOrder')
 
 
 #NegotiateOrderUI
