@@ -78,5 +78,9 @@ class OrderManager:
             pass
 
     def confirmOrder(self):
-        pass
+        def confirmOrder(self, fp_id, order_id):
+        orderObject=Order.objects.filter(order_id=order_id)
+        orderObject.food_provider_id=fp_id
+        order_object.confirm_date_time=datetime.now()
+        order_object.order_status = 1
 
